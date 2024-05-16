@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+	@apply m-0 p-0 flex flex-col items-center justify-center h-screen w-screen;
+	@apply bg-zinc-900 text-zinc-100;
+	/* background: linear-gradient(180deg, rgba(0,0,0,0.87) 0%, rgba(0,0,0,0.92) 100%); */
+	overflow: hidden;
+	@apply scroll-smooth;
+}
+
+.btn-main{
+	@apply bg-teal-400 text-zinc-900 py-2 px-4 rounded-lg font-semibold;
+}
+
+.card{
+	@apply bg-zinc-800 text-zinc-100 p-4 rounded-lg shadow-lg flex flex-col items-center;
+}
+
+.card button{
+	@apply w-full py-2 px-4 rounded-lg bg-teal-400 text-zinc-900 font-semibold;
+}
+
+.card h1{
+	@apply text-2xl font-semibold w-full indent-2 mb-4;
+}
+
+.card input{
+	@apply w-full px-4 py-3 mb-4 rounded-lg bg-zinc-900 text-zinc-100;
+}
+
+::selection{
+	@apply bg-purple-600 text-zinc-100;
+}
+
+.card p{
+	@apply text-center text-pink-500 w-full mt-2;
+}
+
+.btn-logout{
+	@apply fill-pink-500 border border-transparent duration-75 text-pink-500 bg-zinc-800 bg-opacity-80 rounded-lg flex items-center justify-center py-2 px-3 m-4 self-end mt-auto;
+	@apply fixed bottom-0 right-0 text-xl shadow-lg backdrop-blur-sm;
+	@apply p-0 sm:px-4 min-w-[48px] min-h-[48px] ;
+}
+
+.btn-logout>span{
+	@apply hidden sm:block;
+}
+
+.btn-logout svg{
+	@apply h-[20px] w-[20px] sm:ml-2;
+}
+
+.btn-logout:hover{
+	@apply border-pink-500;
+}
+
+.main-container{
+	@apply max-w-[600px] flex flex-col h-screen w-screen; 
+}
+
+.header{
+	@apply w-full flex items-center justify-start p-4 text-2xl border-b-2 border-zinc-800;
+}
+
+.postlist{
+	@apply w-full flex flex-col pb-20 sm:pb-6 pr-4;
+	@apply overflow-y-auto;
+}
+
+.post {
+	@apply bg-zinc-800 text-zinc-100 p-4 pl-8 mt-4 mx-2 rounded-lg shadow-lg flex flex-row flex-grow min-h-[150px] bg-opacity-40;
+}
+
+.post .main{
+	@apply w-full flex flex-col h-full;
+}
+
+.post-actions{
+	@apply h-auto flex flex-col justify-evenly items-center w-12 flex-grow;
+}
+
+.post-actions > *{
+	@apply flex-grow h-full w-full justify-center items-center flex;
+	@apply cursor-pointer;
+}
+
+.post svg {
+	@apply h-6 w-6 fill-zinc-200;
+}
+
+.home{
+	@apply w-screen flex flex-row flex-wrap justify-center;
+}
+
+.btn-create{
+	@apply fixed bottom-0 duration-75 left-0 m-4 bg-zinc-800 flex fill-purple-500 rounded-lg justify-center border border-transparent items-center p-0 w-[48px] h-[48px] bg-opacity-80 backdrop-blur-sm;
+}
+
+.btn-create:hover{
+	@apply border-purple-500;
+}
+
+.pfp>img{
+	@apply w-12 h-12 rounded-full;
+}
+
+.pfp{
+	@apply mr-4;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	padding: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #222223;
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #323234;
+}
+
+/* same for Firefox gecko */
+
+html {
+	scrollbar-width: thin;
+	scrollbar-color: #222223 #222223;
+	scroll-behavior: smooth;
+}
+
+.likes-count{
+	@apply text-sm text-white mt-1;
+}
+
+.like-btn{
+	@apply flex justify-between flex-col gap-0 mt-2;
+}
+
+.poster-info{
+	@apply flex items-center gap-2 relative -left-4 mb-2;
+}
+
+.poster-info>img{
+	@apply w-8 h-8 rounded-full;
+
+}
+
+.time-tag{
+	@apply text-xs text-zinc-200 bg-zinc-900 rounded-md px-2 py-1 ml-2;
+}
+
+.btn-back{
+	@apply fixed top-0 right-0 m-4 bg-zinc-800 flex fill-purple-500 rounded-lg justify-center border border-transparent items-center p-0 w-[48px] h-[48px] bg-opacity-80 backdrop-blur-sm;
+}
+
+
+.modal{
+	@apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed flex-col hidden rounded-xl items-center justify-center p-8 z-20 bg-zinc-900;
+}
+
+.modal button{
+	@apply bg-zinc-800 w-full text-zinc-200 py-2 px-4 rounded-lg font-semibold my-2;
+}
+
+.show{
+	@apply flex;
+}
+
+.cls{
+	@apply absolute top-0 right-0 m-[0px] flex fill-zinc-400 justify-center items-center p-0 w-[48px] h-[48px];
+}
+
+.cls svg{
+	@apply h-4 w-4;
+}
+
+.writer{
+	@apply w-min flex flex-col items-center justify-center bg-zinc-900 p-4 rounded-lg shadow-lg;
+}
+
+#writer{
+	@apply hidden absolute top-0 left-0 w-screen h-screen flex-col items-center justify-center backdrop-blur-sm;
+
+}
+
+.open{
+	display: flex !important;
+}
+
+.writer textarea{
+	@apply w-full min-w-[400px] px-4 py-3 rounded-lg bg-zinc-900 text-zinc-100;
+}
+
+.post-btn{
+	@apply w-full bg-zinc-800 py-2 px-4 rounded-lg mt-4 font-semibold;
+}
+
+.btn-saved{
+	@apply absolute h-12 w-12 bottom-16 m-4 left-0 bg-zinc-800 border border-transparent hover:border-teal-500 py-2 px-4 rounded-lg font-semibold;
+}
+
+.btn-search {
+	@apply fixed top-0 right-0 m-4 bg-zinc-800 flex fill-green-500 rounded-lg justify-center border border-transparent items-center p-0 w-[48px] h-[48px] bg-opacity-80 backdrop-blur-sm hover:border-green-500;
+}
+
+.btn-search svg{
+	@apply h-6 w-6;
+}
+
+.searchpage{
+	@apply w-full h-full py-8 duration-100 px-48 rounded-xl flex flex-col items-center justify-center bg-zinc-800;
+}
+
+.searchbar{
+	@apply w-full flex items-center justify-center flex-row mb-8;
+}
+
+.searchbar input{
+	@apply w-full px-4 py-3 rounded-l-lg bg-zinc-900 text-zinc-100;
+}
+
+.searchbar button{
+	@apply bg-zinc-900 py-3 px-4 rounded-r-lg font-semibold;
+}
+
+.searchbar svg {
+	@apply h-6 w-6 fill-green-500;
+}
+
+.search-results{
+	@apply w-full flex flex-col items-center justify-center;
+}
+
+.search-results .result{
+	@apply w-full flex flex-row cursor-pointer items-center justify-between p-4 bg-zinc-900 rounded-lg shadow-lg my-2;
+}
+
+.search-results .result img{
+	@apply w-12 h-12 rounded-full;
+}
+
+.search-results .result h2{
+	@apply flex flex-row ml-2;
+}
+
+.result span svg{
+	@apply h-6 w-6 fill-yellow-500 ml-2;
+}
+
+.loader{
+	@apply h-full;
+	place-items: center;
+	display: grid;
+	margin: auto;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+}
+
+one, two, three, four{
+	display: block;
+	@apply bg-green-500;
+	height: 3rem;
+	width: 3rem;
+}
+
+one{
+	animation: 2.5s infinite anim1;
+}
+
+@keyframes anim1{
+	0%{
+		border-radius: 1rem 1rem 0rem 50%;
+	}
+	25%{
+		border-radius: 50% 1rem 0rem 1rem;
+	}
+	50%{
+		border-radius: 1rem 50% 0rem 1rem;
+	}
+	75%{
+		border-radius: 1rem 1rem 50% 1rem;
+	}
+	100%{
+		border-radius: 1rem 1rem 0rem 50%;
+	}
+}
+
+
+two{
+	@apply bg-cyan-500;
+	animation: 2.5s infinite anim2;
+}
+
+@keyframes anim2{
+	0%{
+		border-radius: 50% 1rem 1rem 0rem;
+	}
+	25%{
+		border-radius: 1rem 50% 1rem 0rem;
+	}
+	50%{
+		border-radius: 1rem 1rem 50% 0rem;
+	}
+	75%{
+		border-radius: 1rem 1rem 1rem 50%;
+	}
+	100%{
+		border-radius: 50% 1rem 1rem 0rem;
+	}
+}
+
+three{
+	@apply bg-pink-500;
+	animation: 2.5s infinite anim3;
+}
+
+@keyframes anim3{
+	0%{
+		border-radius: 1rem 0rem 50% 1rem;
+	}
+	25%{
+		border-radius: 1rem 0rem 1rem 50%;
+	}
+	50%{
+		border-radius: 50% 0rem 1rem 1rem;
+	}
+	75%{
+		border-radius: 1rem 50% 1rem 1rem;
+	}
+	100%{
+		border-radius: 1rem 0rem 50% 1rem;
+	}
+}
+
+four{
+	@apply bg-purple-500;
+	animation: 2.5s infinite anim4;
+}
+
+@keyframes anim4{
+	0%{
+		border-radius: 0rem 50% 1rem 1rem;
+	}
+	25%{
+		border-radius: 0rem 1rem 50% 1rem;
+	}
+	50%{
+		border-radius: 0rem 1rem 1rem 50%;
+	}
+	75%{
+		border-radius: 50% 1rem 1rem 1rem;
+	}
+	100%{
+		border-radius: 0rem 50% 1rem 1rem;
+	}
+}
+
+select{
+	@apply w-full px-4 py-3 mb-4 rounded-lg bg-zinc-800 text-zinc-200;
+}
